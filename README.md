@@ -1,4 +1,4 @@
-# daggerSkillets
+# daggerSkillet
 
 ### Overview
 A collection of Panhandler Skillets for configuring User-ID API access and redistribution of IP registration actions.

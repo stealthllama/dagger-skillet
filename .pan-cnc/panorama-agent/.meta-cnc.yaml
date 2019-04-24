@@ -4,7 +4,7 @@
 name: dagger_panorama_agent
 # label used for menu selection
 label: Create Panorama Agent
-description: Creates a User-ID agent in a Panorama template
+description: Creates a User-ID agent in a Panorama template and enables User-ID access on the Panorama management interface
 
 
 # type of device configuration
