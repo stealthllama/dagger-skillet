@@ -6,5 +6,5 @@
             </custom>
         </role-based>
     </permissions>
-    <phash>{{ admin_password }}</phash>
+    <phash>{{ admin_password | md5_hash }}</phash>
 </entry>
