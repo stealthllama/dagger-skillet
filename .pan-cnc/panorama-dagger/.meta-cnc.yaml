@@ -42,6 +42,7 @@ variables:
     type_hint: text
   - name: admin_password
     description: Admin password
+    default:
     type_hint: password
   
 # ---------------------------------------------------------------------
