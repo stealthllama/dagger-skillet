@@ -56,7 +56,7 @@ snippets:
   - name: api_key
     path: https://{{ TARGET_IP }}/api/?type=keygen&user={{ admin_name }}&password={{ admin_password }}
     operation: get
-    output_type: xml
+    output_type: json
     outputs:
       - name: api_key
         capture_pattern: result/key
