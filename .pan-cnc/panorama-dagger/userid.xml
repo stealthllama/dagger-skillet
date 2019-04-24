@@ -1,1 +1,5 @@
-<disable-userid-service>no</disable-userid-service>
+<service>
+    <disable-telnet>yes</disable-telnet>
+    <disable-http>yes</disable-http>
+    <disable-userid-service>no</disable-userid-service>
+</service>
