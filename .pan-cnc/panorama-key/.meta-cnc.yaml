@@ -1,16 +1,16 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: dagger_panorama_agent
+name: dagger_panorama_key
 # label used for menu selection
-label: Create Panorama Agent
-description: Creates a User-ID agent in a Panorama template
+label: Step 2 - Generate API Key
+description: Generates an API key for the User-ID API administrator
 
 
 # type of device configuration
 # common types are panorama, panos, and template
 # https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
-type: panorama
+type: rest
 # preload static or default-based templates
 extends:
 
@@ -27,20 +27,23 @@ labels:
 # variables used in the configuration templates
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
-variables:
-  - name: agent_name
-    description: User-ID agent name
-    default: Panorama
-    type_hint: text
-  - name: template_name
-    description: Panorama template name
-    default:
-    type_hint: text
-  - name: template_vsys
-    description: Panorama template VSYS
-    default: vsys1
-    type_hint: text
-
+# variables:
+#   - name: role_name
+#     description: Admin role name
+#     default: DAG Admins
+#     type_hint: text
+#   - name: role_description
+#     description: Admin role description
+#     default: An admin role for DAG API users
+#     type_hint: text
+#   - name: admin_name
+#     description: Admin username
+#     default: dagadmin
+#     type_hint: text
+#   - name: admin_password
+#     description: Admin password
+#     default:
+#     type_hint: password
   
 # ---------------------------------------------------------------------
 # end of variables section
@@ -50,11 +53,11 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: panorama_userid
-    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system/service
-    file: userid.xml
-  - name: panorama_agent
-    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='{{ template_name }}']/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ template_vsys }}']/user-id-agent
-    file: agent.xml
+  - name: api_key
+    path: http://{{ TARGET_IP }}/api/?type=keygen&user={{ admin_name }}&password={{ admin_password }}
+    operation: POST
+
+
+
 # ---------------------------------------------------------------------
 # end of snippets section

@@ -1,10 +1,10 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Dagger Panorama
+name: dagger_firewall_agent
 # label used for menu selection
-label: dagger_firewall_agent
-description: Configures a Panorama User-ID agent 
+label: Create firewall agent
+description: Creates a Panorama User-ID agent on a firewall
 
 
 # type of device configuration

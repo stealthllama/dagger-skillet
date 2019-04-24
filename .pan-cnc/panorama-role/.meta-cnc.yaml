@@ -1,10 +1,10 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Dagger Panorama
+name: dagger_panorama_role
 # label used for menu selection
-label: dagger_panorama_role
-description: Configures a Panorama admin role and user for User-ID API calls
+label: Step 1 - Create API role and user
+description: Step 1- Creates a Panorama admin role and user for User-ID API calls
 
 
 # type of device configuration
