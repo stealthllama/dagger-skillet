@@ -1,0 +1,63 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: Dagger Panorama
+# label used for menu selection
+label: dagger_panorama_role
+description: Configures a Panorama admin role and user for User-ID API calls
+
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: panorama
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - Dagger Skillets
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: role_name
+    description: Admin role name
+    default: DAG Admins
+    type_hint: text
+  - name: role_description
+    description: Admin role description
+    default: An admin role for DAG API users
+    type_hint: text
+  - name: admin_name
+    description: Admin username
+    default: dagadmin
+    type_hint: text
+  - name: admin_password
+    description: Admin password
+    default:
+    type_hint: password
+  
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: dag_role
+    xpath: /config/shared/admin-role
+    file: role.xml
+  - name: dag_user
+    xpath: /config/mgt-config/users
+    file: user.xml
+# ---------------------------------------------------------------------
+# end of snippets section

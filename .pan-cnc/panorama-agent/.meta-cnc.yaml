@@ -3,8 +3,8 @@
 # unique snippet name
 name: Dagger Panorama
 # label used for menu selection
-label: dagger_panorama
-description: Configures a Panorama DAG admin role and redistribution of registered IP addresses
+label: dagger_panorama_agent
+description: Creates a User-ID agent in a Panorama template and enables User-ID on the management interface
 
 
 # type of device configuration
@@ -28,22 +28,19 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: role_name
-    description: Admin role name
-    default: DAG Admins
+  - name: agent_name
+    description: User-ID agent name
+    default: Panorama
     type_hint: text
-  - name: role_description
-    description: Admin role description
-    default: An admin role for DAG API users
-    type_hint: text
-  - name: admin_name
-    description: Admin username
-    default: dagadmin
-    type_hint: text
-  - name: admin_password
-    description: Admin password
+  - name: template_name
+    description: Panorama template name
     default:
-    type_hint: password
+    type_hint: text
+  - name: template_vsys
+    description: Panorama template VSYS
+    default: vsys1
+    type_hint: text
+
   
 # ---------------------------------------------------------------------
 # end of variables section
@@ -53,14 +50,11 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: dag_role
-    xpath: /config/shared/admin-role
-    file: role.xml
-  - name: dag_user
-    xpath: /config/mgt-config/users
-    file: user.xml
   - name: panorama_userid
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system/service
     file: userid.xml
+  - name: panorama_agent
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='{{ template_name }}']/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='{{ template_vsys }}']/user-id-agent
+    file: agent.xml
 # ---------------------------------------------------------------------
 # end of snippets section
