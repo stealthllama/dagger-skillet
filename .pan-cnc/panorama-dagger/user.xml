@@ -1,0 +1,10 @@
+<entry name="{{ admin_name }}">
+    <permissions>
+        <role-based>
+            <custom>
+                <profile>{{ role_name }}</profile>
+            </custom>
+        </role-based>
+    </permissions>
+    <phash>{{ admin_password }}</phash>
+</entry>

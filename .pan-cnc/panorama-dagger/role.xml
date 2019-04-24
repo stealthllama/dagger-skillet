@@ -1,0 +1,12 @@
+<entry name="{{ role_name }}">
+    <description>{{ role_description }}</description>
+    <role>
+        <panorama>
+            <webui/>
+            <contextswitch/>
+            <xmlapi>
+                <user-id>enable</user-id>
+            </xmlapi>
+        </panorama>
+    </role>
+</entry>
