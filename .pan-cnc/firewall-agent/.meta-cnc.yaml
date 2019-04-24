@@ -3,7 +3,7 @@
 # unique snippet name
 name: dagger_firewall_agent
 # label used for menu selection
-label: Create firewall agent
+label: Create Firewall Agent
 description: Creates a Panorama User-ID agent on a firewall
 
 

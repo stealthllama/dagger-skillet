@@ -55,11 +55,11 @@ labels:
 snippets:
   - name: api_key
     path: http://{{ TARGET_IP }}/api/?type=keygen&user={{ admin_name }}&password={{ admin_password }}
-    operation: POST
-    output_type: xml
-    outputs:
-      - name: api_key
-        capture_pattern: result/key
+    operation: GET
+    # output_type: xml
+    # outputs:
+    #   - name: api_key
+    #     capture_pattern: result/key
 
 
 

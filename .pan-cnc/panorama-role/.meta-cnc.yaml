@@ -3,7 +3,7 @@
 # unique snippet name
 name: dagger_panorama_role
 # label used for menu selection
-label: Step 1 - Create API role and user
+label: Step 1 - Create API Role and User
 description: Step 1- Creates a Panorama admin role and user for User-ID API calls
 
 
